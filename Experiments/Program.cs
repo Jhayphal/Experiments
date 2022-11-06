@@ -22,13 +22,13 @@ namespace Experiments
       foreach (var handle in mainWindows)
       {
         if (WindowsInfoProvider.GetTitle(handle, buffer).Contains(text))
-        {
+        { // https://docs.microsoft.com/ru-ru/dotnet/api/system.windows.automation.treewalker.controlviewwalker?view=windowsdesktop-6.0
           AutomationElement browserMainWindow = AutomationElement.FromHandle(handle);
 
           DrawControlsTree(browserMainWindow);
 
           break;
-        }
+        } // https://docs.microsoft.com/ru-ru/dotnet/framework/ui-automation/obtaining-ui-automation-elements?source=recommendations
       }
     }
 
